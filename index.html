@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
         <link rel="stylesheet" href="styles.css">
         <title>
             18CSE301J_RA2011028010018
@@ -11,11 +12,62 @@
             <div>
                 <center>
                     <br>
-                    <p1>18CSE301J - Information Visualization</p1>
-                    <br><br>
-                    <p2>Adarsh Jamuaar - RA2011028010018</p2>
+                    <h1>18CSE301J - Information Visualization</h1>
+                    <h2>Adarsh Jamuaar - RA2011028010018</h2>
                 </center>
             </div>
+            <center>
+                <br>
+                <p3>About the GDP + Agriculture Datasets: </p3><br>
+                <object data="datasetinfo.pdf" 
+                width="800" 
+                height="500"> 
+        </object>
+            <h1>1. Tableau</h1>
+            <div class='tableauPlaceholder' id='viz1678400787131' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;In&#47;IndiaGDP_16784006648250&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='IndiaGDP_16784006648250&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;In&#47;IndiaGDP_16784006648250&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1678400787131');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1366px';vizElement.style.height='795px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+        </center>
+        </section>
+        <br>
+        <br>
+        <h2>2. Python/d3</h2>
+        <p3>Bubble Chart</p3>
+        <section>
+            
+  <svg width="500" height="500"></svg> 
+	<script type="text/javascript">
+    var data = [
+      {source:"Agriculture, Forestry and Fishing", x: 145, y: 350, val: 18400.229, color: "#C9D6DF"},
+      {source:"Mining & quarrying", x: 390, y: 290, val: 18400.229, color: "#F7EECF"},
+      {source:"Manufacturing", x: 220, y: 250, val: 22094.278, color: "#E3E1B2"},
+      {source:"Electricity, gas ,water supply& other utility services", x: 290, y: 90, val: 27265.002, color: "#F9CAC8"},
+      {source:"Construction", x: 180, y: 170, val: 9643.057, color: "#D1C2E0"},
+    ]
+    var svg = d3.select("svg")
+              .attr("width", 800)
+              .attr("height", 800);
+    svg.selectAll("circle")
+      .data(data).enter()
+      .append("circle")
+      .attr("cx", function(d) {return d.x})
+      .attr("cy", function(d) {return d.y})
+      .attr("r", function(d) {
+        return Math.sqrt(d.val)/Math.PI 
+      })
+      .attr("fill", function(d) {
+        return d.color;
+      });
+    svg.selectAll("text")
+      .data(data).enter()
+      .append("text")
+      .attr("x", function(d) {return d.x+(Math.sqrt(d.val)/Math.PI)})
+      .attr("y", function(d) {return d.y+4})
+      .text(function(d) {return d.source})
+      .style("font-family", "arial")
+      .style("font-size", "16px")
+
+
+
+	</script>
         </section>
     </body>
 </html>
