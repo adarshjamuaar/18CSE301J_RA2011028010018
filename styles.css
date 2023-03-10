@@ -1,8 +1,10 @@
 body {
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
+    background: radial-gradient(ellipse at bottom, #cdbfbf 0%, #000000 100%);
+    color: rgb(255, 255, 255);
     font-size: 30px;
     text-align: center;
     margin: 0;
     padding: 0;
 }
+
+

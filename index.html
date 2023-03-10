@@ -18,18 +18,32 @@
             </div>
             <center>
                 <br>
-                <p3>About the GDP + Agriculture Datasets: </p3><br>
+                <p3>About the Datasets: </p3><br><br>
+                <p3>1. GDP 2011Q1-2022Q3: This dataset contains multiple GDP contributing factors and their contribution through the quarters.
+                  <br><br>2. Crop Production: This dataset has multiple parameters including Crops, Seasons, States, District, Production and Yield. These parameteres are helpful to study the Agriculture situation in the country and any necessary changes which can be brought up to make the sector prosper.
+                </p3>
+          
                 <object data="datasetinfo.pdf" 
                 width="800" 
                 height="500"> 
         </object>
             <h1>1. Tableau</h1>
+            <p2>Both GDP and CropProduction Datasets have been used to produce different Visualizations with year being a connecting factor for the two datasets.</p2>
             <div class='tableauPlaceholder' id='viz1678400787131' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;In&#47;IndiaGDP_16784006648250&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='IndiaGDP_16784006648250&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;In&#47;IndiaGDP_16784006648250&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1678400787131');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1366px';vizElement.style.height='795px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
         </center>
         </section>
         <br>
         <br>
-        <h2>2. Python/d3</h2>
+        <section>
+          <h2>2. Gephi</h2>
+          <p2>The figure below is generated using Gephi. Two new dataset was extracted from the dataset "CropProduction" and the datasets "Node" and "Edge" was created.
+            The "node" dataset contains "id" and "label" where label represents crops and seasons. The "edge" dataset contains "source", "target" and 
+            weight" where source is the crop name and target is the season name. Weight describes the number of districts farming the crop in a particular season.
+          </p2>
+          <br>
+          <img src="gephi.png" alt="gephi">
+        </section>
+        <h2>3. d3.js</h2>
         <p3>Bubble Chart</p3>
         <section>
             
@@ -68,6 +82,33 @@
 
 
 	</script>
+        </section>
+        <embed type="text/txt" src="d3code.txt" width="1366" height="600">
+
+        <section>
+          <h2>
+            4. Python 
+          
+            <a href="https://colab.research.google.com/drive/1n5x207vB7aYAmjR0lTUrOreEwsaGBF7e?usp=sharing"><br>Google Colab link</a></h2>
+            
+            
+
+            
+            <embed type="text/html" src="GDP_Analysis.html" width="1366" height="768">
+
+          
+        </section>
+        <section>
+          <br>
+            <h2>References
+            </h2>
+            <p2><a href="https://data.gov.in/catalog/quarterly-estimates-gdp-constant-prices"><br>Indian GDP Dataset source by OGD</a><br>
+              <a href="https://www.kaggle.com/datasets/pyatakov/india-agriculture-crop-production"><br>India Agriculture Crop Production Dataset source by Ministry of Agriculture</a>
+              <br>
+              <a href="https://www.youtube.com/watch?v=GXtbL8avpik"><br>Gephi Nodes and Edges</a>
+
+              
+            </p2>
         </section>
     </body>
 </html>

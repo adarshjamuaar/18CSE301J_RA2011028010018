@@ -1,0 +1,35 @@
+<svg width="500" height="500"></svg> 
+	<script type="text/javascript">
+    var data = [
+      {source:"Agriculture, Forestry and Fishing", x: 145, y: 350, val: 18400.229, color: "#C9D6DF"},
+      {source:"Mining & quarrying", x: 390, y: 290, val: 18400.229, color: "#F7EECF"},
+      {source:"Manufacturing", x: 220, y: 250, val: 22094.278, color: "#E3E1B2"},
+      {source:"Electricity, gas ,water supply& other utility services", x: 290, y: 90, val: 27265.002, color: "#F9CAC8"},
+      {source:"Construction", x: 180, y: 170, val: 9643.057, color: "#D1C2E0"},
+    ]
+    var svg = d3.select("svg")
+              .attr("width", 800)
+              .attr("height", 800);
+    svg.selectAll("circle")
+      .data(data).enter()
+      .append("circle")
+      .attr("cx", function(d) {return d.x})
+      .attr("cy", function(d) {return d.y})
+      .attr("r", function(d) {
+        return Math.sqrt(d.val)/Math.PI 
+      })
+      .attr("fill", function(d) {
+        return d.color;
+      });
+    svg.selectAll("text")
+      .data(data).enter()
+      .append("text")
+      .attr("x", function(d) {return d.x+(Math.sqrt(d.val)/Math.PI)})
+      .attr("y", function(d) {return d.y+4})
+      .text(function(d) {return d.source})
+      .style("font-family", "arial")
+      .style("font-size", "16px")
+
+
+
+	</script>
